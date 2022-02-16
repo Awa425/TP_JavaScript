@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(92, 222, 245);
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.add{
+    float: right;
+}
+.card{
+    width: 25vw;
+    height: 50vh;
+    display: grid;
+    grid-template-rows: 10% 1fr;
+    margin-right: 20px;
+}
+.card .header{
+    background-color: green;
+}
+.card .center{
+    background-color: white;
+}
+.header .icon{
+    float: right;
+    margin-top:0.5rem;
+}
+
