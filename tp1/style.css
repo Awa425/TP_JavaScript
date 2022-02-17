@@ -2,32 +2,58 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(92, 222, 245);
+    /* background-color: rgb(92, 222, 245); */
+    background-image: url('allison-saeng-_gDdZ3pG78k-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* display: flex; */
+    
 }
 .container{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
-    align-items: center;
-    width: 100%;
+    /* align-items: center; */
+    /* width: 100%; */
+    flex-wrap: wrap;
+    
+    /* justify-content: space-evenly; */
 }
-.add{
+ .add{
     float: right;
+    background-color: #df40b7;
+    font-size: 2em;
+    border-radius: 14px;
+    color: orange;
 }
 .card{
-    width: 25vw;
-    height: 50vh;
+    /* width: auto; */
+    /* height: auto; */
     display: grid;
     grid-template-rows: 10% 1fr;
     margin-right: 20px;
+    /* width: 30%; */
+    min-height: 50vh;
+    margin: 0.5em;
+    
 }
 .card .header{
-    background-color: green;
+    background-color: rgb(245, 99, 124);
 }
 .card .center{
-    background-color: white;
+    background-color: pink;
+    width: auto;
+    
+
 }
 .header .icon{
     float: right;
     margin-top:0.5rem;
 }
+textarea{
+    min-width: 2vw;
+    min-height: 7vh;
+    width: 207px;
+height: 429px;
 
+}
