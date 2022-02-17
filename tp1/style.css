@@ -41,7 +41,7 @@ body{
     background-color: rgb(245, 99, 124);
 }
 .card .center{
-    background-color: pink;
+    background: none;
     width: auto;
     
 
