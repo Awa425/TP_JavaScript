@@ -30,7 +30,6 @@ function Delete(i) {
 }
 function edit(li) {
     let edit = document.getElementById('txt_'+li) 
-     console.log(edit)
     edit.toggleAttribute('disabled') 
     edit.focus() 
 }
