@@ -1,0 +1,49 @@
+body{
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 43vw;
+    height: 58vh;
+    display: grid;
+    grid-template-rows: 18% 1fr 12%;
+    background-color: indigo;
+    border: 14px solid indigo;
+}
+.container .head{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-top: 1rem;
+    z-index: 1;
+    background-color: #8552aa;
+    background-color: rgb(41, 25, 56);
+    color: white;
+    padding-left: 15px;
+}
+.container .head h1{
+    text-align: center;
+
+}
+.container .head button{
+    height: 3em;
+}
+.container .center{
+    background-color: #150920;
+    color: white;
+}
+.container .foot{
+    /* background-color: rgb(223, 201, 23); */
+}
+.container .foot button{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(251, 228, 49);
+    font-size: 2em;
+    font-weight: bold;
+    color: #5e3c77;
+
+}

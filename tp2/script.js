@@ -17,13 +17,13 @@ let myList3 = [
     
 ]
 
-console.log(myList)
+// console.log(myList)
 
 //Fonction
 function creerTable() {
    bloc1.innerHTML =''; 
     const table = document.createElement('table')
-    const tab3 = document.createElement('table')
+    var tab3 = document.createElement('table')
 
 
     for (let i = 0; i < 4; i++) {
@@ -34,21 +34,30 @@ function creerTable() {
 
         //events TR 
             tr.addEventListener('click', function () {
-                creerTable()
                 myList[i].activated=!myList[i].activated
                 // let x=0
-                if (myList[i].activated) {
+                
                     btnGauche.addEventListener('click', ()=>{
-                        tab3.innerHTML=myList[i].name
+                        for(let x = 0; x<myList.length; x++){
+                        if (myList[x].activated) {
+                            myList3.push(myList[x].name )
+                            // myList3=myList[x].name 
+                            tab3.innerText = myList3
+
                             // tab3.appendChild(p)
-                        myList.splice(0);
-                        // p.remove()
+                        var corbeil= myList.splice(x,1);
+                        console.log(myList) 
+                        console.log(myList3)
+
+                        creerTable()
+                        } 
+                        // tab3.splice(i,0)
                         // x++
-                        // creerTable()
-                        console.log(myList[i].name)
                         //  creerTable()
+                        // console.log(myList)
+                        //  creerTable()
+                        }
                     });    
-                }
                 creerTable()
                 
 
