@@ -34,9 +34,28 @@ body{
 .container .center{
     background-color: #150920;
     color: white;
+    font-size: 1.2em;
 }
-.container .foot{
-    /* background-color: rgb(223, 201, 23); */
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    list-style: none;
+}
+#a{
+    width: 4vw;
+}
+.head #pass{
+    background: none;
+    border: none;
+    width: 100%;
+    color: white;
+}
+
+.container .center ul li{
+    display: flex;
+    justify-content: space-between;
 }
 .container .foot button{
     width: 100%;
@@ -45,5 +64,4 @@ body{
     font-size: 2em;
     font-weight: bold;
     color: #5e3c77;
-
 }

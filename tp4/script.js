@@ -52,8 +52,7 @@ function build() {
 }
 
 function desactiveReponse() {
-    reponse.forEach(rep=>rep.checked=false)
-    
+    reponse.forEach(rep=>rep.checked=false)    
 }
 
 function getSelect() {
@@ -61,7 +60,7 @@ function getSelect() {
     reponse.forEach(reponse=>{
         if (reponse.checked) {
             reponse = reponse.id
-            // console.log(reponse)
+            console.log(reponse)
             // console.log(myList.reponse)
 
         }
