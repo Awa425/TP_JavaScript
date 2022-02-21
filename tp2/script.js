@@ -1,59 +1,46 @@
-//Declaration
 const bloc1 = document.querySelector('.bloc1')
+const bloc2 = document.querySelector('.bloc2')
 const btnGauche = document.querySelector('.btnGauche')
+const btnDroite = document.querySelector('.btnDroite')
 const bloc3 = document.querySelector('.bloc3')
 
-let myList = [
-    {name: 'Mon premier', activated: 0},
-    {name: 'Mon deuxieme', activated: 0},
-    {name: 'Mon trosieme', activated: 0},
-    {name: 'Mon quatrieme', activated: 0}
-]
-let myList3 = [
-    
-]
-//Fonction
-function creerTable() {
-   bloc1.innerHTML =''; 
-    const table = document.createElement('table')
-    var tab3 = document.createElement('table')
+let myList = ['Mon premier','Mon deuxieme','Mon trosieme','Mon quatrieme']
 
-    for (let i = 0; i < 4; i++) {
-        const tr = document.createElement('tr')
+    for (let i = 0; i < myList.length; i++) {
+        const a = document.createElement('a')
+        a.setAttribute('href', '#')
         const p = document.createElement('p')
-        p.innerText = myList[i].name
-            tr.addEventListener('click', function () {
-                myList[i].activated=!myList[i].activated                
-                    btnGauche.addEventListener('click', ()=>{
-                        for(let x = 0; x<myList.length; x++){
-                        if (myList[x].activated) {
-                            // myList3.push(myList[x].name )
-                            // console.log(myList3[x])
-                            myList3=myList[x].name 
-                            tab3.innerHTML = myList3
-                            // tab3.appendChild(p)
-                            var corbeil= myList.splice(x,1);
-                            creerTable()
-                        } 
-                    }
-                });    
-                creerTable()
-            });
-          
-        tr.style.backgroundColor= myList[i].activated ? "blue" : "rgb(211, 207, 207)";
+        p.innerText = myList[i];  
+        a.appendChild(p);
+        bloc1.appendChild(a);
+    } 
 
-        //events btn
-        btnGauche.addEventListener('click', function (params) {
-            
-        })
+const a = document.querySelectorAll('a');
 
-        //ajout dans les parent
-        tr.appendChild(p)
-        table.appendChild(tr)
-        bloc1.appendChild(table)
-        bloc3.appendChild(tab3)
-
-      
-    }
+for (let i = 0; i < a.length; i++) {
+        a[i].addEventListener('click', ()=>{
+            a[i].classList.toggle('active');  //classList donne une class a un element
+        });
 }
-window.onload = creerTable;
+
+const elt_blog1 = bloc1.querySelectorAll('a');
+btnGauche.addEventListener('click', ()=>{
+    for (let i = 0; i < elt_blog1.length; i++) {
+        if (elt_blog1[i].className=='active') {
+            elt_blog1[i].className='';
+            bloc3.appendChild(elt_blog1[i]);
+        }
+        
+    }
+}) ;
+ 
+btnDroite.addEventListener('click', ()=>{
+const elt_blog3 = bloc3.querySelectorAll('a');
+    for (let i = 0; i < elt_blog3.length; i++) {
+       if(elt_blog3[i].className=='active'){
+            elt_blog3[i].className='';
+            bloc1.appendChild(elt_blog3[i]);
+       }
+    }
+});
+

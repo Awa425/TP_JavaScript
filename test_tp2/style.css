@@ -22,11 +22,3 @@ body{
 .bloc3{
     background-color: rgb(211, 207, 207);
 }
-a{
-   text-decoration: none;
-   color: black; 
-}
-a.active{
-    background-color: blue;
-    color: white;
-}
