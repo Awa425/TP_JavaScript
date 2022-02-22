@@ -5,7 +5,7 @@ const myList = [
         b: 'HTML',
         c: 'C++',
         d: 'PHP',
-        correct: 'Java'
+        correct: 'a'
     },
     {
         Question: 'Trouver intrus',
@@ -13,7 +13,7 @@ const myList = [
         b: 'C++',
         c: 'Chrome',
         d: 'HTML',
-        correct: 'Chrome'
+        correct: 'c'
     },
     {
         Question: 'Trouver intrus',
@@ -21,7 +21,7 @@ const myList = [
         b: 'firefox',
         c: 'Chrome',
         d: 'Internet explore',
-        correct: 'java'
+        correct: 'a'
     }
 ]
 const container = document.getElementById('container')
@@ -56,32 +56,39 @@ function desactiveReponse() {
 }
 
 function getSelect() {
-    let eltSelect
-    reponse.forEach(reponse=>{
-        if (reponse.checked) {
-            reponse = reponse.id
-            console.log(reponse)
-            // console.log(myList.reponse)
+    let eltSelect =''
+    reponse.forEach(rep=>{
+        rep.addEventListener('click',function () {
+            rep.setAttribute('checked', true)
+            console.log(rep);
+            eltSelect = rep
+            
+        })
+        return rep
+        submit.addEventListener('click', ()=>{
+            console.log(rep)
+        })
+    })  
 
-        }
-    })
-    return reponse
 }
+// const f = getSelect()
 
-submit.addEventListener('click', ()=>{
-    const reponse = getSelect(); 
-    if(reponse){   
-        if (reponse === myList[currentQuiz]) {
-            score++ ; 
-        }
-        currentQuiz++
-        if (currentQuiz < myList.length) {
-            build();
-        }
-        else{
-            container.innerHTML=`
-            <h2>Vous avez ${score} correct sur ${myList.length}  </>  
-            <button onclick='location.reload()'>Reload</button> `
-        }
+    const reponses = getSelect(); 
+    // console.log(reponses)
+    // console.log(myList[currentQuiz].correct)
+submit.addEventListener('click', ()=>{  
+    if ('a' == 'a') {
+        score++ ; 
+        // console.log(score)   
+    }  
+    currentQuiz++
+    if (currentQuiz < myList.length) {
+        build();
     }
+    else{
+        container.innerHTML=`
+        <h2>Vous avez ${score} correct sur ${myList.length}  </>  
+        <button onclick='location.reload()'>Reload</button> `
+    }
+    
 });

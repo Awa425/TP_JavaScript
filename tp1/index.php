@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="../index.html">Page d'accueil</a>
     <button class="add" id="btnAdd">Add card</button>
     <div class="container" id="container">
     </div>

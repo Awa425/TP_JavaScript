@@ -1,5 +1,6 @@
 //String.fromCharCode converti une chaine de caractere  
 //floor recupere la partie entiere
+//Fonction anonyme ne peut s'execute qu'une seule fois
 let myList = [
 
     { 
@@ -21,8 +22,9 @@ const nombre = document.getElementById('nombre');
 const car_spe = document.getElementById('car_spe');
 const btn_Gen = document.getElementById('btn_Gen');
 
+//TABLEAU OBJET
 let generateFunctions = {
-    lower: lowerCase,
+    lower: lowerCase,     //chac fonct genere une seule caractere
     upper: upperCase,
     symbole: symbole,
     number: number
@@ -36,17 +38,36 @@ for (let i = 0; i < myList.length; i++) {
     centre.appendChild(ul);
 } 
 
+function generate_Pass(estlength_pass,upper,lower,symbole,number) {
+   let generate_Pass='';
+    const count_elt = upper+lower+symbole+number;   //somme des fonction qui genere chacun un element
+    console.log(count_elt);
+    const count_elt_array = [{upper},{lower},{symbole},{number}].filter(type=>Object.values(type)[0]);  //tableau simple qui represente la valeur de chaque
+    if (count_elt == 0) {
+        alert('Veuillez cocher au moins une case')
+    }
+
+    for (let i = 0; i < estlength_pass; i+=count_elt) {
+        count_elt_array.forEach(element => {
+        const get_elt = Object.keys(element)[0];   
+        generate_Pass+=generateFunctions[get_elt](); 
+        });   
+    }
+    const a=generate_Pass.slice(0,estlength_pass);
+    return a;
+}
+
 btn_Gen.addEventListener('click', ()=>{
     const estlength_pass = +long_pass.value;
     const estupper = lettre_maj.checked;
     const estlower = lettre_min.checked;
     const estsymbole = car_spe.checked;
     const estnombre = nombre.checked;
-
-    // pass.innerText = generePass(estlength_pass, estupper, estlower, estsymbole, estnombre )
-
+    
+    pass.value = generate_Pass(estlength_pass, estupper, estlower, estsymbole, estnombre );
+    pass.shuffle()
+    console.log(pass)
 })
-
 
 function lowerCase() {
     let a = String.fromCharCode(Math.floor(Math.random() * 26)+ 97);

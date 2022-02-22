@@ -22,17 +22,17 @@ const btn_Gen = document.getElementById('btn_Gen')
 
 
 //Definition des caracteres du mot de pass
-// const caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-// const maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// const minus = "abcdefghijklmnopqrstuvwxyz"
-// const numeric = "0123456789";
-// const symbols = "!@#$%^&*_-+=";
+const caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const minus = "abcdefghijklmnopqrstuvwxyz"
+const numeric = "0123456789";
+const symbols = "!@#$%^&*_-+=";
 
 const generatePass = (long_pass, caracteres)=>{
     let password = "";
     for (let i = 0; i < long_pass; i++) {
         password += caracteres.charAt(
-            Math.floor(Math.random() * caracteres.lenght)
+            Math.floor(Math.random() * caracteres.length)
         )   
     }
     return password

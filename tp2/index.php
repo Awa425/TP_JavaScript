@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a class="menu" href="../index.html">Page d'accueil</a>
     <div class="container">
         <div class="bloc1"></div>
         <div class="bloc2">

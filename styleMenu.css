@@ -1,0 +1,14 @@
+body{
+    height: 8vh;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+a{
+    text-decoration: none;
+    color: chocolate;
+    border: 2px solid chocolate;
+    border-radius: 10px;    
+}
