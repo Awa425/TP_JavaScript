@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url('../tp1/allison-saeng-_gDdZ3pG78k-unsplash.jpg');
+    background: url('../images/pexels-tara-winstead-6479594.jpg');
     background-size: 100% 100%;
 }
 .container{
@@ -16,9 +16,10 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-size: 2em;  
+    font-size: 2.5em;
+    font-weight: bold;  
     background: none;
-border: 2px solid red;
+border: 5px solid chocolate;
 border-radius: 10px; 
 }
 .bloc2{
@@ -37,7 +38,8 @@ border-radius: 10px;
     justify-content: space-evenly;
     font-size: 2em;
     background: none;
-    border: 2px solid red;
+border: 5px solid chocolate;
+
     border-radius: 10px; 
 }
 button{
@@ -53,6 +55,6 @@ a.active{
     
 }
 .menu{
-    color: #ff003c;
+    /* color: #ff003c; */
     font-size: 2em;
 }

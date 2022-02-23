@@ -6,16 +6,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url('../images/pexels-tara-winstead-6479594.jpg');
+    background-size: 100% 100%;
     
 }
 .container{
     width: 40vw;
-    height: 58vh;
-    background-color: rgb(238, 234, 229);
-    border: 10px solid #cb96f2
+    height: 64vh;
+    /* background-color: rgb(238, 234, 229); */
+    border: 10px solid rgb(97, 42, 2)
 }
 .header h2{
     text-align: center;
+    color: pink;
 }
 .header ul{
     display: flex;
@@ -31,15 +34,19 @@ list-style: none;
 button{
     width: 100%;
     height: 8vh;
-    background-color: rgb(166, 54, 247);
-    color: white;
+    background-color: chocolate;
     font-size: 2em;
     font-weight: bold;
 }
 button:hover{
-    background-color: rgb(67, 36, 88);
+    background-color: rgb(97, 42, 2);
+    color: white;
+}
+.header ul li:hover{
+    background-color: rgb(97, 42, 2);
+    color: white;
 }
 button:focus{
     outline: none;
-    background-color: rgb(28, 1, 48);
+    background-color: rgb(54, 23, 1);
 }

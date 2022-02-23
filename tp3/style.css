@@ -4,6 +4,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url('../images/pexels-tara-winstead-6479594.jpg');
+    background-size: 100% 100%;
+    
 }
 .container{
     width: 43vw;

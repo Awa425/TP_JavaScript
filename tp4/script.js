@@ -76,7 +76,7 @@ function getSelect() {
     const reponses = getSelect(); 
     // console.log(reponses)
     // console.log(myList[currentQuiz].correct)
-submit.addEventListener('click', ()=>{  
+    submit.addEventListener('click', ()=>{  
     if ('a' == 'a') {
         score++ ; 
         // console.log(score)   
