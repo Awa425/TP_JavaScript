@@ -10,6 +10,7 @@ const nombre = document.getElementById('nombre');
 const car_spe = document.getElementById('car_spe');
 const btn_Gen = document.getElementById('btn_Gen');
 
+
 //Definition des caracteres du mot de pass
 const maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const minus = "abcdefghijklmnopqrstuvwxyz"
@@ -25,8 +26,11 @@ const generatePass = (long_pass,char, caracteres)=>{
     }
     return char += password;
 };
-
 btn_Gen.addEventListener('click', ()=>{
+    if(long_pass.value<=0 || long_pass.value>15){
+        alert('la longueur du mot de pass ne doit pas null ou depasser 15')
+    }
+    else{
     let cpt=0;
     for (let i = 1; i < input.length; i++) {
         if(input[i].checked)
@@ -35,12 +39,22 @@ btn_Gen.addEventListener('click', ()=>{
     let char = "";
     let caracteres = ""
     
-    lettre_maj.checked ? (char += upperCase(), caracteres += maj) : "";
-    lettre_min.checked ? (char += lowerCase(), caracteres += minus) : "";
-    nombre.checked ? (char += number(), caracteres += numeric) : "";
-    car_spe.checked ? (char += symbole(), caracteres += symbols) : ""; 
+    lettre_maj.checked ? (char += getChar(26, 65), caracteres += maj) : "";
+    lettre_min.checked ? (char += getChar(26, 97), caracteres += minus) : "";
+    nombre.checked ? (char += getChar(10, 48), caracteres += numeric) : "";
+    car_spe.checked ? (char += getChar(13, 33), caracteres += symbols) : ""; 
     pass.value = generatePass(long_pass.value, char, caracteres);
+    pass.addEventListener('mouseover', ()=>{
+
+    })
+
+}
 }); 
+pass.addEventListener('mouseover', ()=>{
+    if (pass.value!='') {
+        btn_copy.style.visibility = 'visible';
+    }
+})
 
 btn_copy.addEventListener("click", () => {
     pass.select();
@@ -48,20 +62,24 @@ btn_copy.addEventListener("click", () => {
     alert("Mot de pass copier");
   });  
 
-  function lowerCase() {
-    let a = String.fromCharCode(Math.floor(Math.random() * 26)+ 97);
+  function getChar(x, y) {
+    let a = String.fromCharCode(Math.floor(Math.random() * x)+ y);
     return a;
 }
+//   function lowerCase() {
+//     let a = String.fromCharCode(Math.floor(Math.random() * 26)+ 97);
+//     return a;
+// }
 
-function upperCase() {
-    let a = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-    return a;
-}
-function symbole() {
-    let a = String.fromCharCode(Math.floor(Math.random() * 13) + 33)
-    return a;
-}
-function number() {
-    let a = +String.fromCharCode(Math.floor(Math.random() * 10) + 48)
-    return a;
-}
+// function upperCase() {
+//     let a = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+//     return a;
+// }
+// function symbole() {
+//     let a = String.fromCharCode(Math.floor(Math.random() * 13) + 33)
+//     return a;
+// }
+// function number() {
+//     let a = +String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+//     return a;
+// }

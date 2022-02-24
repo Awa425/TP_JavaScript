@@ -10,12 +10,29 @@
     <div class="container">
         <forme class="form" id="form">
             <h2>Join ODC</h2>
-            <div class="form-control"><label for=""></label><input type="text"><small>Error Message</small></div>
-            <div class="form-control"><label for=""></label><input type="text"><small>Error Message</small></div>
-            <div class="form-control"><label for=""></label><input type="text"><small>Error Message</small></div>
-            <div class="form-control"><label for=""></label><input type="text"><small>Error Message</small></div>
+            <div class="form-control">
+                <label for=""></label>
+                <input type="text">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for=""></label>
+                <input type="text">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for=""></label>
+                <input type="text">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for=""></label>
+                <input type="text">
+                <small>Error Message</small>
+            </div>
             <button>submit</button>
         </forme>
     </div>
 </body>
+<script src="script.js"></script>
 </html>
