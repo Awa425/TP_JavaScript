@@ -6,19 +6,33 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../images/pexels-tara-winstead-6479594.jpg');
+    background: url('../images/francesco-ungaro-1VcAWoNIERs-unsplash.jpg');
     background-size: 100% 100%;
+    flex-direction: column;
+justify-content: space-between;
     
 }
+a{
+    width: 100%;
+text-decoration: none;
+font-size: 2em;
+color: pink;
+}
 .container{
-    width: 40vw;
-    height: 64vh;
+    width: 71%;
+    height: 74%;
     /* background-color: rgb(238, 234, 229); */
-    border: 10px solid rgb(97, 42, 2)
+    border: 10px solid rgb(126, 6, 62);
+    display: flex;
+flex-direction: column;
+justify-content: space-between;
+margin: 2%;
+    
 }
 .header h2{
     text-align: center;
     color: pink;
+    font-weight: bold;
 }
 .header ul{
     display: flex;
@@ -30,23 +44,25 @@ list-style: none;
 .header ul li{
     list-style: none;
     font-size: 2em;
+    font-weight: bold;
+    color: pink;
 }
 button{
     width: 100%;
-    height: 8vh;
-    background-color: chocolate;
+    height: 73%;
+    background-color: rgb(255, 192, 252);
     font-size: 2em;
     font-weight: bold;
 }
 button:hover{
-    background-color: rgb(97, 42, 2);
-    color: white;
+    background-color: rgb(126, 6, 62);
+    color: black;
 }
 .header ul li:hover{
-    background-color: rgb(97, 42, 2);
-    color: white;
+    background-color: rgb(126, 6, 62);
+    color: black;
 }
 button:focus{
     outline: none;
-    background-color: rgb(54, 23, 1);
+    background-color: rgb(126, 6, 62);
 }

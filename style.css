@@ -3,7 +3,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     height: 100vh;
-    background: url('./images/pexels-tara-winstead-6479594.jpg');
+    background: url('./images/francesco-ungaro-1VcAWoNIERs-unsplash.jpg');
     background-size: auto;
     background-size: 100% 100%;
     display: flex;
@@ -28,10 +28,10 @@ h1{
 a{
     text-decoration: none;
     text-decoration: none;
-    border: 3px solid chocolate;
+    border: 3px solid pink;
     border-radius: 10px;
-    background-color: pink;
-    color: #3b1a02;
-    width: 16vw;
+    background-color: none;
+    color: pink;
+    width: 22%;
     text-align: center;
 }

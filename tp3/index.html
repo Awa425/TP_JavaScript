@@ -8,16 +8,17 @@
     <title>Document</title>
 </head>
 <body>
+    <a class="menu" href="../index.html">Page d'accueil</a>
     <div class="container">
         <div class="head">
-            <input type="text" id="pass">
+            <input type="text" readonly id="pass">
             <button id="btn_copy" class="visible">copy</button>
         </div>
         <div class="center">
             <ul>
                 <li>
                     <label for="long_pass">Longueur du Password</label>
-                    <input type="text" id="long_pass" class="input">
+                    <input type="text" id="long_pass" class="input" value="4">
                 </li>
                 <li>
                     <label for="lettre_maj" id="">Contient des lettres Majuscules</label>  
@@ -38,7 +39,7 @@
             </ul>
         </div>
         <div class="foot">
-            <button id="btn_Gen">Generer le Mot de Passe</button>
+            <button id="btn_Gen">Generer un Mot de Passe</button>
         </div>
     </div>
 </body>

@@ -27,8 +27,8 @@ const generatePass = (long_pass,char, caracteres)=>{
     return char += password;
 };
 btn_Gen.addEventListener('click', ()=>{
-    if(long_pass.value<=0 || long_pass.value>15){
-        alert('la longueur du mot de pass ne doit pas null ou depasser 15')
+    if(long_pass.value<4 || long_pass.value>15){
+        alert('la longueur du mot de pass doit  comprise entre 4 et 15');
     }
     else{
     let cpt=0;

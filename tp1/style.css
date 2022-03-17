@@ -2,48 +2,45 @@
     box-sizing: border-box;
 }
 body{
-    /* background-color: rgb(92, 222, 245); */
-    background-image: url('allison-saeng-_gDdZ3pG78k-unsplash.jpg');
+    background: url('../images/francesco-ungaro-1VcAWoNIERs-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+    
     
 }
 .container{
-    min-height: 100vh;
-    height: auto;
+    height: 100vh;
     display: flex;
     /* align-items: center; */
     /* width: 100%; */
     flex-wrap: wrap;
+    justify-content: start;
     
     /* justify-content: space-evenly; */
 }
  .add{
     float: right;
-    background-color: #df40b7;
+    background-color: blue;
     font-size: 2em;
     border-radius: 14px;
     color: orange;
 }
 .card{
-    /* width: auto; */
-    /* height: auto; */
-    display: grid;
-    grid-template-rows: 10% 1fr;
-    margin-right: 20px;
-    /* width: 30%; */
-    min-height: 50vh;
     margin: 0.5em;
+    flex-direction: column;
+    height: 45%;
+    display: flex;
     
 }
 .card .header{
-    background-color: rgb(245, 99, 124);
+    background-color: blue;
 }
 .card .center{
     background: none;
     width: auto;
-    
+    height: 100%;
 
 }
 .header .icon{
@@ -51,10 +48,7 @@ body{
     margin-top:0.5rem;
 }
 textarea{
-    min-width: 2vw;
-    min-height: 7vh;
-    width: 207px;
-height: 429px;
+    height: 100%;
 
 }
 a{

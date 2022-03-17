@@ -40,7 +40,7 @@ build()
 
 function build() {
 
-    desactiveReponse()
+    // desactiveReponse()
 
     //recupere l'objet de l'indice currentQuiz puis l'afficher
     const currentList = myList[currentQuiz]
@@ -59,27 +59,29 @@ function getSelect() {
     let eltSelect =''
     reponse.forEach(rep=>{
         rep.addEventListener('click',function () {
-            rep.setAttribute('checked', true)
-            console.log(rep);
+            // rep.setAttribute('checked', true)
+            // console.log(rep.value);
             eltSelect = rep
-            
         })
-        return rep
-        submit.addEventListener('click', ()=>{
-            console.log(rep)
-        })
+        return rep.value
     })  
-
 }
-// const f = getSelect()
 
-    const reponses = getSelect(); 
-    // console.log(reponses)
-    // console.log(myList[currentQuiz].correct)
-    submit.addEventListener('click', ()=>{  
-    if ('a' == 'a') {
-        score++ ; 
-        // console.log(score)   
+function check(x){
+    return x.checked;
+}
+ function getCheck(array){
+    newArray = array.filter(check)
+    return newArray[0].value;
+ }
+
+
+submit.addEventListener('click', ()=>{   
+
+        
+         if (getCheck(Array.from(reponse)) == myList[currentQuiz].correct) {
+             score++ ; 
+            console.log(score)   
     }  
     currentQuiz++
     if (currentQuiz < myList.length) {
@@ -88,7 +90,8 @@ function getSelect() {
     else{
         container.innerHTML=`
         <h2>Vous avez ${score} correct sur ${myList.length}  </>  
-        <button onclick='location.reload()'>Reload</button> `
+        <button onclick='location.reload()'>Relancer</button> `
     }
     
 });
+
