@@ -2,7 +2,7 @@ const btn_group = document.querySelector('.btn-group');
 const btns = document.querySelectorAll('.btn')
 const generate = document.querySelector('.generate');
 
-console.log(btns); 
+// console.log(btns); 
  
 btns.forEach((btn,i) => {
     if(i==0){btn.setAttribute('class', 'green')}
