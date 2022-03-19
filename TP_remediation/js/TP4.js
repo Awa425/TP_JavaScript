@@ -55,6 +55,5 @@ const dateOffsetMinute = now.getTimezoneOffset();//renvoie le decallage de temps
     // let countInterval = setInterval(getCountdown, 1000);
  }
 
-
  //On s'execute pour la 1ere fois la fonction 
 //  getCountdown();
