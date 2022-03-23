@@ -84,24 +84,6 @@ const ul = body.querySelector('.menu-links')
 
 const divSousMenu = document.createElement('div') 
 
-// arraySide.forEach(elt => {
-
-//     if (elt.sousMenu.length!=0) {
-//         createMenu(elt.icon, elt.text, elt.textBadge,elt.numBadge, elt.menu)
-//         // createMenu("bx bx-circle icon","rtyu")
-
-
-
-//         // elt.sousMenu.forEach(sm=>{
-//         //     const itemSousMenu = createMenu(elt.iconCercle, sm)
-//         //     divSousMenu.appendChild(itemSousMenu)
-//         // })
-//     }
-//     else {
-//         createMenu(elt.icon, elt.text, elt.textBadge, elt.numBadge)
-//     }
-   
-// });
 arraySide.forEach(elt => {
 
     
@@ -166,11 +148,6 @@ arraySide.forEach(elt => {
 
    
 });
-
-
-
-
-
 
 
 

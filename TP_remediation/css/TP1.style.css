@@ -1,8 +1,8 @@
 :root{
-    --green: green;
-    --yellow: yellow;
-    --red: red;
-    --blue: blue;
+    --green: #28a745;
+    --yellow: #ffc107;
+    --red: #bd2130;
+    --blue: #17a2b8;
 }
 body{
     display: flex;
