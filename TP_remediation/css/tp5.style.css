@@ -45,7 +45,7 @@ main{
     background-color: var(--secondary-color);
     overflow: hidden;
     position: relative;
-    /* scroll-behavior: smooth; */
+    overflow-y: scroll;
 }
 .film-info{
     display: flex;

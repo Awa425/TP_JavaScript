@@ -8,13 +8,7 @@
 }
 
 :root{
-    /* Colors  */
-    --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
-    --primary-color: white;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #707070;
+    --text-color: white;
     --blue-color: rgb(4, 4, 175);
 
     /*  Transition */
@@ -35,16 +29,32 @@ body{
     color: var(--primary-color);
 }
 
-/* body.dark{
-    --body-color: #18191a;
-    --sidebar-color: black;
-    --primary-color: #3a3b3c;
-    --primary-color-light: #3a3b3c;
-    --toggle-color: #fff;
-    --text-color: #ccc;
-} */
-
 /* Sidebar*/
+.entete{
+    height: 17%;
+}
+.admin{
+    height: 5%;
+    position: relative;
+}
+.adminTex{
+    color: white;
+    position: absolute;
+top: 0;
+left: 92px;
+}
+.admin i{
+    position: absolute;
+left: 2px;
+top: 11px;
+}
+.profil{
+    height: 5%;
+}
+.profilText{
+    
+    color: white;
+}
  .sidebar{
     position: fixed;
     top: 0;
@@ -58,8 +68,8 @@ body{
 }
 .sidebar.close{
     width: 88px;
+    color: white;
 }
-
 
 .sidebar li{
     height: 50px;
@@ -240,7 +250,7 @@ body.dark .sidebar header .toggle{
 }
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text{
-    color: var(--sidebar-color);
+    color: var(--text-color);
     color: white;
 }
 body.dark .sidebar li a:hover .icon,
@@ -260,7 +270,7 @@ body.dark .sidebar li a:hover .text{
 } */
 
 .menuIcon{
-    color: gray;
+    color: white;
     text-align: end;
 }
 
@@ -270,11 +280,16 @@ body.dark .sidebar li a:hover .text{
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
-    background-color: var(--primary-color);
+    background-color: #34495e;
     transition: var(--tran-05);
-   
+    position: relative;
 }
-
+.main .retour{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+}
 .sidebar.close ~ .main{
     left: 78px;
     height: 100vh;

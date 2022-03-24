@@ -79,14 +79,12 @@ const body = document.querySelector('body'),
       toggle = body.querySelector(".toggle"),
       searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
-      modeText = body.querySelector(".mode-text");
-const ul = body.querySelector('.menu-links')
+      modeText = body.querySelector(".mode-text"),
+      ul = body.querySelector('.menu-links'),
+      divSousMenu = document.createElement('div') ;
 
-const divSousMenu = document.createElement('div') 
-
-arraySide.forEach(elt => {
-
-    
+    arraySide.forEach(elt => {
+  
         const li = document.createElement('li');
         const a = document.createElement('a');
         const i = document.createElement('i');
@@ -147,66 +145,18 @@ arraySide.forEach(elt => {
         ul.appendChild(divSousMenu);
 
    
-});
-
-
+    });
 
 const fle = document.querySelectorAll(".bx-chevron-left")
 fle.forEach(elem=>{
     elem.addEventListener('click', ()=>{
         elem.classList.toggle('sous_menu')
       elem.parentElement.parentElement.nextElementSibling.toggleAttribute("hidden")
-    //   elem.parentElement.toggleAttribute("hidden")
     })
 })
 
-//function
-function createMenu(icon, text, textBadge='',numBadge='', menu=''){
-   
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const i = document.createElement('i');
-    const span = document.createElement('span');
-    const tBadge = document.createElement('span');
-    const nBadge = document.createElement('span');
-    const iMenu = document.createElement('i')
-
-  
-
-//setAttribut
-li.setAttribute('class', 'nav-link')
-i.setAttribute('class', icon+' icon')
-span.setAttribute('class', 'text nav-text');
-span.innerText = text;
-tBadge.innerText =  textBadge;
-nBadge.innerText =  numBadge;
-tBadge.setAttribute('class', 'textBadge');
-nBadge.setAttribute('class', 'numBadge');
-iMenu.setAttribute('class', menu)
-iMenu.setAttribute('id', 'iconing')
-iMenu.classList.add('menuIcon')
-
-
-
-//AppenChild
-
-
-a.append(i,span, tBadge,nBadge,iMenu);
-li.appendChild(a);
-ul.appendChild(li);
-
-// console.log(li)
-return li;
-
-
-
-}
-
-
-
 toggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("close");
-    
 })
 
 searchBtn.addEventListener("click" , () =>{
