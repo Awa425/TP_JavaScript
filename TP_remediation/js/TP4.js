@@ -5,6 +5,8 @@
  const minute = document.getElementById('m')
  const seconde = document.getElementById('s')
 
+//  console.log(moment)
+
 //creer un constante contenant le decalage de la zone utc et ou nous somme
 let now = new Date();
 const dateOffsetMinute = now.getTimezoneOffset();//renvoie le decallage de temps

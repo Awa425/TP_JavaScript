@@ -1,8 +1,14 @@
 
 const divrecette=document.querySelector(".recette");
 const modalContainer=document.querySelector(".modal-container");
+const recherche = document.querySelector('.recherche')
+const btn = document.querySelector('#btn')
+
 
 const APIRECETTE = `https://www.themealdb.com/api/json/v1/1/random.php`
+const Api_Id = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=`
+const Api_name = `https://www.themealdb.com/api/json/v1/1/search.php?s=`
+
 fetch(APIRECETTE)
         .then(function(response){
             return response.json()
@@ -29,11 +35,11 @@ fetch(APIRECETTE)
                             <p class="modal-descr">${mealDescription}</p>
                             <div class="modal-ingredient">
                                 <p class="ingre-title">Ingredients:</p>
-                                <p class="ingred-content">
+                                <div class="ingred-content">
                                     <ul id="id_ul">
                                        
                                     </ul>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div> 
@@ -46,13 +52,130 @@ fetch(APIRECETTE)
                  for (let i = 1; i < 20; i++) {
                      let liContent = document.createElement('li')
                         let mealIngredient =meal[`strIngredient${i}`]
-                        liContent.textContent=mealIngredient;
-                        ulContent.appendChild(liContent);
+                        if (mealIngredient!="") {
+                            liContent.textContent=mealIngredient;
+                            ulContent.appendChild(liContent);
+                        }
+                       
                    }
             });
         })
 
+//Event 
+btn.addEventListener('click', ()=>{
+    let inp = recherche.value;
+    if (inp.match(/\d/)) { 
+        fetch(Api_Id+inp)
+        .then(function(response){console.log(response.json())
+            return response.json() ; 
+        })
+        .then(function(resultat){
+            resultat.meals.forEach(meal => {
+            let mealTitre = meal.strMeal;
+            let mealImage = meal.strMealThumb;
+            let mealDescription = meal.strInstructions;
+            let mealCategorie = meal.strCategory;
+           
+                createRecette(mealTitre,mealImage)
 
+                modalContainer.innerHTML = `
+                <div class="modal">
+                    <div class="modal-header">
+                        <p class="modal-title">${mealTitre}</p>
+                        <p class="modal-close">x</p>
+                    </div>
+    
+                
+                    <div class="modal-main">
+                        <div class="modal-img"><img src= ${mealImage} class="img2" alt=""></div>
+                        <p class="modal-descr">${mealDescription}</p>
+                        <div class="modal-ingredient">
+                            <p class="ingre-title">Ingredients:</p>
+                            <div class="ingred-content">
+                                <ul id="id_ul">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+             `
+             const heart = document.querySelector('.heart')
+             heart.addEventListener('click', ()=>{
+                modalContainer.classList.add('show-modal')
+             })
+             const ulContent = document.getElementById('id_ul')
+             for (let i = 1; i < 20; i++) {
+                 let liContent = document.createElement('li')
+                    let mealIngredient =meal[`strIngredient${i}`]
+                    if (mealIngredient!="") {
+                        liContent.textContent=mealIngredient;
+                        ulContent.appendChild(liContent);
+                    }   
+               }
+            });
+        })
+    }
+    else if (inp.match(/[a-zA-Z]/)) { 
+        fetch(Api_name+inp)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(resultat){
+            resultat.meals.forEach(meal => {
+            let mealTitre = meal.strMeal;
+            let mealImage = meal.strMealThumb;
+            let mealDescription = meal.strInstructions;
+            let mealCategorie = meal.strCategory;
+           
+                createRecette(mealTitre,mealImage)
+
+                modalContainer.innerHTML = `
+                <div class="modal">
+                    <div class="modal-header">
+                        <p class="modal-title">${mealTitre}</p>
+                        <p class="modal-close">x</p>
+                    </div>
+    
+                
+                    <div class="modal-main">
+                        <div class="modal-img"><img src= ${mealImage} class="img2" alt=""></div>
+                        <p class="modal-descr">${mealDescription}</p>
+                        <div class="modal-ingredient">
+                            <p class="ingre-title">Ingredients:</p>
+                            <div class="ingred-content">
+                                <ul id="id_ul">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+             `
+             const heart = document.querySelector('.heart')
+             const modal_close = document.querySelector('.modal-close');
+              
+             heart.addEventListener('click', ()=>{
+                modalContainer.classList.add('show-modal'); 
+             })
+             modal_close.addEventListener('click', ()=>{
+                 alert('ok')
+                modalContainer.remove();
+             })
+             const ulContent = document.getElementById('id_ul')
+             for (let i = 1; i < 20; i++) {
+                 let liContent = document.createElement('li')
+                    let mealIngredient =meal[`strIngredient${i}`]
+                    if (mealIngredient!="") {
+                        liContent.textContent=mealIngredient;
+                        ulContent.appendChild(liContent);
+                    }   
+               }
+            });
+        })
+    }
+    
+})
 
 function createRecette(titre,mealImage) {
     const divimageGenere=document.createElement('div');

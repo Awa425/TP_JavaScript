@@ -1,3 +1,10 @@
+let images = [
+    "./images/img1.jpeg",
+    "./images/3.jpg",
+    "./images/img5.jpg",
+    "./images/img6.jpeg",
+    "./images/img7.jpg"
+]
 
 const img_slider = document.querySelectorAll('.img_slider');
 const length = img_slider.length
@@ -5,7 +12,6 @@ const precedant = document.querySelector('.precedant');
 const suivant = document.querySelector('.suivant');
 
 let etape = 0;
-
 
 
 function deleteClassActive() {
